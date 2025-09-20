@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import CategoryFilter from "@/components/CategoryFilter";
@@ -13,7 +13,7 @@ import {
 } from "@/data/products";
 import { GiTreasureMap, GiPirateSkull } from "react-icons/gi";
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -110,5 +110,24 @@ export default function Home() {
         )}
       </section>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense
+      fallback={
+        <div className="container mx-auto px-4 py-8 min-h-screen">
+          <div className="text-center">
+            <GiPirateSkull className="text-6xl text-amber-600 mx-auto mb-4 animate-spin" />
+            <p className="font-pirate-body text-xl text-amber-300">
+              Loading treasures...
+            </p>
+          </div>
+        </div>
+      }
+    >
+      <HomeContent />
+    </Suspense>
   );
 }
