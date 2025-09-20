@@ -69,6 +69,12 @@ const Header = () => {
             >
               About Captain
             </Link>
+            <Link
+              href="/feedback.html"
+              className="text-amber-100 hover:text-amber-200 font-pirate-body transition-colors"
+            >
+              Feedback
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -125,6 +131,13 @@ const Header = () => {
                 className="text-amber-100 hover:text-amber-200 font-pirate-body transition-colors"
               >
                 About Captain
+              </Link>
+              <Link
+                href="/feedback.html"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-amber-100 hover:text-amber-200 font-pirate-body transition-colors"
+              >
+                Feedback
               </Link>
             </nav>
           </div>
