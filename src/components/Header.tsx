@@ -34,7 +34,7 @@ const Header = () => {
             <GiPirateHat className="text-4xl text-amber-200 group-hover:text-amber-100 transition-colors" />
             <div>
               <h1 className="font-pirate-title text-2xl lg:text-3xl text-amber-100">
-                The Captain's
+                The Captain&apos;s
               </h1>
               <p className="font-pirate-title text-xl lg:text-2xl text-amber-200 -mt-1">
                 Treasure Shop

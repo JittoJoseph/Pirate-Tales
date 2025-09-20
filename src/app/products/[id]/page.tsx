@@ -11,7 +11,6 @@ import {
   FaArrowLeft,
   FaMinus,
   FaPlus,
-  FaCheck,
 } from "react-icons/fa";
 import { GiPirateSkull, GiTreasureMap } from "react-icons/gi";
 

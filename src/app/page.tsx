@@ -74,7 +74,7 @@ export default function Home() {
       {!searchQuery && selectedCategory === "All" && (
         <section className="mb-12">
           <h2 className="font-pirate-title text-4xl text-amber-200 text-center mb-8">
-            Captain's Featured Treasures
+            Captain&apos;s Featured Treasures
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProducts.map((product) => (
