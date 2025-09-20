@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   GiPirateSkull,
   GiTreasureMap,
@@ -45,11 +46,14 @@ export default function AboutCaptain() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Portrait */}
           <div className="bg-parchment rounded-lg p-6 shadow-lg">
-            <div className="relative h-80 w-full mb-4 bg-amber-800 rounded-lg flex items-center justify-center">
-              <GiPirateHat className="text-8xl text-amber-200" />
-              <p className="absolute bottom-2 left-2 right-2 text-center font-pirate-body text-amber-700 text-sm">
-                Portrait lost in the great rum spill of '23
-              </p>
+            <div className="relative h-80 w-full mb-4 rounded-lg overflow-hidden">
+              <Image
+                src={"/captains.jpeg"}
+                alt="Captain Silvias Clickbeard McCommerce"
+                className="w-full h-full object-cover"
+                width={400}
+                height={320}
+              />
             </div>
             <div className="text-center space-y-2">
               <h3 className="font-pirate-title text-2xl text-red-900">
