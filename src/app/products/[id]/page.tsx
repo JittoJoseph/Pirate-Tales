@@ -6,12 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProductById } from "@/data/products";
 import { useCart } from "@/context/CartContext";
-import {
-  FaShoppingCart,
-  FaArrowLeft,
-  FaMinus,
-  FaPlus,
-} from "react-icons/fa";
+import { FaShoppingCart, FaArrowLeft, FaMinus, FaPlus } from "react-icons/fa";
 import { GiPirateSkull, GiTreasureMap } from "react-icons/gi";
 
 export default function ProductDetail() {

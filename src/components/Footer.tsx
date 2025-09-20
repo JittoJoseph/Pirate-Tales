@@ -19,7 +19,8 @@ const Footer = () => {
             <div className="flex items-center justify-center mb-4">
               <GiPirateSkull className="text-3xl text-red-800 mr-3" />
               <p className="font-pirate-title text-2xl text-red-900">
-                &ldquo;Dead men tell no tales, but they sure buy a lot of stuff!&rdquo;
+                &ldquo;Dead men tell no tales, but they sure buy a lot of
+                stuff!&rdquo;
               </p>
               <GiTreasureMap className="text-3xl text-amber-600 ml-3" />
             </div>
@@ -47,8 +48,8 @@ const Footer = () => {
           {/* Disclaimer */}
           <div className="border-t-2 border-amber-600 pt-6 space-y-3">
             <p className="font-pirate-body text-amber-300 text-sm">
-              Warning: Cutlasses may cause sudden urges to say &ldquo;Arrr!&rdquo; and
-              search for buried treasure.
+              Warning: Cutlasses may cause sudden urges to say
+              &ldquo;Arrr!&rdquo; and search for buried treasure.
             </p>
             <p className="font-pirate-body text-amber-300 text-sm">
               Side effects of shopping here may include: Parrot acquisition,
