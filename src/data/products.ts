@@ -35,7 +35,7 @@ export const products: Product[] = [
     name: 'Treasure Chest of Doubloons',
     price: 1299.99,
     description: 'An authentic wooden treasure chest filled with gleaming golden doubloons. The perfect centerpiece for any pirate\'s hoard.',
-    image: '/tressure.png',
+    image: '/chest.jpeg',
     category: 'Treasure',
     featured: true,
     stock: 3

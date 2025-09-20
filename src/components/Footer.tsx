@@ -65,7 +65,7 @@ const Footer = () => {
           {/* Bottom Copyright */}
           <div className="border-t border-amber-600 pt-4">
             <p className="font-pirate-body text-amber-200 flex items-center justify-center space-x-2">
-              <span>© 2025 The Captain's Treasure Shop - Made with</span>
+              <span>© 2025 The Captain&apos;s Treasure Shop - Made with</span>
               <FaHeart className="text-red-500" />
               <span>and a bottle of rum</span>
               <GiPirateSkull className="text-amber-300" />
