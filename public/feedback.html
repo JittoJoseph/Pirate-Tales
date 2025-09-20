@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Captain's Atlas - Speak Yer Mind</title>
+
+    <!-- Google Fonts for the Pirate Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- CSS STYLES --- */
+
+      /* --- Font & Color Variables --- */
+      :root {
+        --font-title: "Pirata One", cursive;
+        --font-body: "IM Fell English", serif;
+        --color-parchment: #f5efe6;
+        --color-dark-brown: #4a2c2a;
+        --color-medium-brown: #5c4033;
+        --color-light-brown: #8c6a5d;
+        --color-red-button: #8c2d19;
+        --color-red-button-hover: #792616;
+        --color-gold: #ffd700;
+      }
+
+      /* --- General Body Styling --- */
+      body {
+        background-color: #2e282a; /* Dark background to make the parchment pop */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        font-family: var(--font-body);
+        box-sizing: border-box;
+      }
+
+      /* --- The Main Parchment Container --- */
+      .parchment-container {
+        background-color: var(--color-parchment);
+        border: 2px solid #d2b48c;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+        padding: clamp(20px, 5vw, 40px); /* Responsive padding */
+        width: 100%;
+        max-width: 650px;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      /* --- Typography --- */
+      .title-font {
+        font-family: var(--font-title);
+        font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive font size */
+        color: var(--color-dark-brown);
+        margin: 0 0 10px 0;
+      }
+
+      .body-font {
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 2.5vw, 1.15rem); /* Responsive font size */
+        color: var(--color-medium-brown);
+        line-height: 1.6;
+      }
+
+      /* --- Form Elements --- */
+      form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .input-group {
+        text-align: left;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--color-light-brown);
+        padding: 10px 0;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        color: var(--color-dark-brown);
+        outline: none;
+        font-family: var(--font-body);
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      textarea:focus {
+        border-bottom-color: var(--color-dark-brown);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--color-light-brown);
+        opacity: 0.8;
+      }
+
+      /* --- NEW Improved Doubloon Rating System --- */
+      .rating-group {
+        text-align: center;
+      }
+
+      .rating-group .body-font {
+        display: block;
+        margin-bottom: 15px;
+        font-size: clamp(1.1rem, 3vw, 1.25rem);
+        color: var(--color-dark-brown);
+      }
+
+      .doubloon-rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .doubloon-rating span {
+        font-size: clamp(2.2rem, 8vw, 3rem); /* Responsive icon size */
+        cursor: pointer;
+        transition: transform 0.2s ease, filter 0.3s;
+        filter: grayscale(100%); /* Make unselected coins grey */
+        transform-origin: center;
+      }
+
+      .doubloon-rating span:hover {
+        transform: scale(1.25); /* Grow on hover */
+        filter: grayscale(0%);
+      }
+
+      /* Highlight the selected coin and all before it */
+      .doubloon-rating span.selected,
+      .doubloon-rating:hover span:hover,
+      .doubloon-rating:hover span:hover ~ span {
+        filter: grayscale(100%);
+      }
+
+      .doubloon-rating:hover span:hover {
+        filter: grayscale(0%);
+      }
+
+      .doubloon-rating span.selected {
+        filter: grayscale(0%);
+        transform: scale(1.1); /* Slight pop effect for selected */
+      }
+
+      /* --- The Button --- */
+      .logbook-button {
+        background-color: var(--color-red-button);
+        color: var(--color-parchment);
+        border: none;
+        padding: 15px 30px;
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        align-self: center; /* Center button in the flex container */
+        font-family: var(--font-title);
+      }
+
+      .logbook-button:hover {
+        background-color: var(--color-red-button-hover);
+        transform: translateY(-2px); /* Slight lift on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parchment-container">
+      <h1 class="title-font">Speak Yer Mind</h1>
+
+      <p class="body-font">
+        Was yer voyage smooth sailin' or did ye hit rough waters? Leave a
+        message in a bottle for the captain!
+      </p>
+
+      <form
+        id="feedback-form"
+        onsubmit="event.preventDefault(); alert('Message sent to the Captain!');"
+      >
+        <div class="input-group">
+          <input
+            type="text"
+            id="captain-name"
+            name="captain-name"
+            class="body-font"
+            placeholder="Sign with yer Captain's Name..."
+          />
+        </div>
+
+        <div class="rating-group">
+          <label class="body-font"
+            >How much treasure was this voyage worth?</label
+          >
+          <div class="doubloon-rating" id="doubloon-rating">
+            <span data-value="1">🪙</span>
+            <span data-value="2">🪙</span>
+            <span data-value="3">🪙</span>
+            <span data-value="4">🪙</span>
+            <span data-value="5">🪙</span>
+          </div>
+          <input type="hidden" name="rating" id="rating-value" required />
+        </div>
+
+        <div class="input-group">
+          <textarea
+            id="message"
+            name="message"
+            class="body-font"
+            rows="5"
+            placeholder="Scribe yer tale here, matey..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="logbook-button">Send the Message</button>
+      </form>
+    </div>
+
+    <script>
+      // --- JAVASCRIPT LOGIC ---
+      document.addEventListener("DOMContentLoaded", function () {
+        const doubloons = document.querySelectorAll(".doubloon-rating span");
+        const ratingInput = document.getElementById("rating-value");
+        let currentRating = 0;
+
+        doubloons.forEach((doubloon) => {
+          // Handle mouse hovering over a doubloon
+          doubloon.addEventListener("mouseover", () => {
+            const value = parseInt(doubloon.dataset.value);
+            highlightDoubloons(value, true); // Tentative highlight
+          });
+
+          // Handle mouse leaving the rating area - revert to saved rating
+          const ratingContainer = document.getElementById("doubloon-rating");
+          ratingContainer.addEventListener("mouseleave", () => {
+            highlightDoubloons(currentRating, false);
+          });
+
+          // Handle clicking a doubloon to set the rating
+          doubloon.addEventListener("click", () => {
+            currentRating = parseInt(doubloon.dataset.value);
+            ratingInput.value = currentRating; // Set the hidden input value
+            highlightDoubloons(currentRating, false);
+          });
+        });
+
+        function highlightDoubloons(value, isHovering) {
+          doubloons.forEach((doubloon) => {
+            const doubloonValue = parseInt(doubloon.dataset.value);
+
+            // Reset all first
+            doubloon.classList.remove("selected");
+
+            // Add 'selected' class to highlight
+            if (doubloonValue <= value) {
+              doubloon.classList.add("selected");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
